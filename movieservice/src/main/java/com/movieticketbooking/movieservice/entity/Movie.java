@@ -15,14 +15,19 @@ import java.time.LocalDate;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     @Schema(description = "The unique ID of the movie", example = "1")
     private Long id;
+    @Column(nullable = false)
     @Schema(description = "The title of the movie", example = "RRR")
     private String title;
+    @Column(nullable = false)
     @Schema(description = "The description of the movie", example = "A historical fiction action film")
     private String description;
+    @Column(nullable = false)
     @Schema(description = "The genre of the movie", example = "Action")
     private String genre;
+    @Column(name = "release_date", nullable = false)
     @Schema(description = "The release date of the movie", example = "2022-03-25")
     private LocalDate releaseDate;
 

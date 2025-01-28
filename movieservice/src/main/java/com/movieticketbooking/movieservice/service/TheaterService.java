@@ -1,8 +1,7 @@
 package com.movieticketbooking.movieservice.service;
 
-import com.movieticketbooking.movieservice.entity.Movie;
+
 import com.movieticketbooking.movieservice.entity.Theater;
-import com.movieticketbooking.movieservice.exception.MovieNotFoundException;
 import com.movieticketbooking.movieservice.exception.TheaterNotFoundException;
 import com.movieticketbooking.movieservice.repository.TheaterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +31,8 @@ public class TheaterService {
         Theater theaterSaveRepo = new Theater();
         theaterSaveRepo.setId(theater.getId());
         theaterSaveRepo.setName(theater.getName());
-        theaterSaveRepo.setCapacity(theater.getCapacity());
-        theaterSaveRepo.setLocation(theater.getLocation());
+        theaterSaveRepo.setTown(theater.getTown());
+
 
 
 
@@ -59,8 +58,7 @@ public class TheaterService {
                     if (validation(updatedTheaters) == 0) {
                         theaters.setId(updatedTheaters.getId());
                         theaters.setName(updatedTheaters.getName());
-                        theaters.setCapacity(updatedTheaters.getCapacity());
-                        theaters.setLocation(updatedTheaters.getLocation());
+                        theaters.setTown(updatedTheaters.getTown());
                         theaterRepository.save(theaters);
 
                         return new ResponseEntity<>(theaters, HttpStatus.CREATED);

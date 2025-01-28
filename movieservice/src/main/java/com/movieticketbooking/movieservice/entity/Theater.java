@@ -4,20 +4,27 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 
+
 @Entity
 @Data
 @Table(name="theatres")
 public class Theater {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     @Schema(description = "The unique ID of the theatre", example = "1")
     private Long id;
+    @Column(nullable = false)
     @Schema(description = "The theatre name", example = "PVR")
     private String name;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "town_id", nullable = false)
     @Schema(description = "The location of the theatre", example = "Hyderabad")
-    private String location;
-    @Schema(description = "The seating capacity of the theatre", example = "200")
-    private int capacity;
+    private Town town;
+
 
     public Long getId() {
         return id;
@@ -34,18 +41,11 @@ public class Theater {
     public void setName(String name) {
         this.name = name;
     }
-    public String getLocation() {
-        return location;
+    public Town getTown() {
+        return town;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setTown(Town town) {
+        this.town = town;
     }
 }
