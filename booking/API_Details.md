@@ -6,3 +6,4 @@ Microservice APIs
 3. Booking Service:
    GET /bookings/available-seats: Check available seats for a show.
    POST /bookings: Book seats for a selected show, apply discounts if applicable, and insert booking information.
+![img.png](img.png)
