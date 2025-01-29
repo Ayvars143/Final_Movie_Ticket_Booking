@@ -22,13 +22,13 @@ public class BookingController {
 
     @Autowired
     private BookingService bookingService;
-    @GetMapping("/available-show-timings")
+   /* @GetMapping("/available-show-timings")
     public List<ShowTiming> getAvailableShowTimings(@RequestParam Long movieId,
                                                     @RequestParam Long theatreId,
                                                     @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate showDate) {
         Date sqlShowDate = Date.valueOf(showDate);
         return bookingService.getAvailableShowTimings(movieId, theatreId, showDate);
-    }
+    }*/
 
 
     @PostMapping("/calculate-discount")

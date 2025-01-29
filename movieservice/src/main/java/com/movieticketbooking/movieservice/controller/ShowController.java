@@ -22,7 +22,7 @@ public class ShowController {
     @Autowired
     private ShowService showService;
 
-    @GetMapping
+    @GetMapping("/available-show-theters")
     @Operation(summary = "Browse theatres currently running the " +
             "show (movie selected) in the town, including show timing" +
             " by a chosen date.", description = "" +

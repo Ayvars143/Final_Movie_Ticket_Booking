@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/theater-mapper")
 @Tag(name = "Theater Controller", description = "APIs for managing Theaters")
 public class TheaterController {
-    @Autowired
+   /* @Autowired
     private TheaterService theaterService;
 
     @PostMapping("/addtheaters")
@@ -87,6 +87,6 @@ public class TheaterController {
     @Operation(summary = "Delete the theater details by id", description = "Delete the theater details from database by theater id")
     public ResponseEntity<String> deleteTheater(@PathVariable Long id) {
         return theaterService.deleteTheaters(id);
-    }
+    }*/
 
 }

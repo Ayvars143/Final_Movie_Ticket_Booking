@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping("/movies-mapper")
 @Tag(name = "Movie Controller", description = "APIs for managing movies")
 public class MovieController {
-    @Autowired
+   /* @Autowired
     private MovieService movieService;
 
     @PostMapping("/addmovies")
@@ -90,6 +90,6 @@ public class MovieController {
     @Operation(summary = "Delete the movie details by id", description = "Delete the movie details from database by movie id")
     public ResponseEntity<String> deleteMovie(@PathVariable Long id) {
         return movieService.deleteMovies(id);
-    }
+    }*/
 }
 
