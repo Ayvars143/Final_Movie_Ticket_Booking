@@ -19,7 +19,7 @@ import java.util.List;
 public class BookingService {
 
     @Autowired
-    private ShowSeatRepository showSeatRepository;
+    private  ShowSeatRepository showSeatRepository;
 
     @Autowired
     private ShowRepository showRepository;

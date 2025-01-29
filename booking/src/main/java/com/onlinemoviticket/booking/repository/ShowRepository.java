@@ -30,5 +30,6 @@ public interface ShowRepository extends JpaRepository<Show, Integer> {
     @Query("SELECT s FROM Show s WHERE s.theater.id = :theaterId AND s.showTime = :showTime AND s.showDate = :showDate")
     Optional<Show> findShow(@Param("theaterId") Long theaterId, @Param("showTime") LocalTime showTime, @Param("showDate") LocalDate showDate);
 
+    List<Show> findByTheaterIdAndShowDate(Long theaterId, LocalDate showDate);
 
 }
